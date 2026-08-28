@@ -46,6 +46,8 @@ int main()
         system("cls");
         printf("Ate mais!\n\n");
         Sleep(2000);
+        printf("Desligando sistema Ferralog...\n");
+        Sleep(1500);
 
         system("cls");
     }
@@ -81,7 +83,4 @@ int main()
     }
 
     return 0;
-
-
-
 }
