@@ -22,82 +22,89 @@ int main()
     printf("[*] Sistema iniciado com sucesso! \n\n");
     Sleep(1000);
 
-    system("cls");
-
-    printf("====================================================\n");
-    printf("             SISTEMA FERRALOG - INVENTARIO\n");
-    printf("====================================================\n\n");
-
-    printf("Selecione uma opcao no menu abaixo:\n");
-    printf("[1] Cadastrar nova ferramenta\n");
-    printf("[2] Consultar ferramenta por QR Code\n");
-    printf("[3] Verificar status de garantia\n");
-    printf("[4] Sair do sistema\n");
-
-    printf("====================================================\n\n");
-
     int opcao;
 
-    printf("Digite a opcao desejada: ");
-    scanf("%d", &opcao);
+    do {
+        system("cls");
 
-    switch (opcao) {
+        printf("====================================================\n");
+        printf("              SISTEMA FERRALOG - INVENTARIO\n");
+        printf("====================================================\n\n");
 
-        case 1: {
-            system("cls");
+        printf("Selecione uma opcao no menu abaixo:\n");
+        printf("[1] Cadastrar nova ferramenta\n");
+        printf("[2] Consultar ferramenta por QR Code\n");
+        printf("[3] Verificar status de garantia\n");
+        printf("[4] Sair do sistema\n");
 
-            char nome_ferramenta[50];
-            int codigo_qr;
-            float valor_compra;
+        printf("====================================================\n\n");
 
-            printf("\n--- SISTEMA FERRALOG ---\n");
+        printf("Digite a opcao desejada: ");
+        scanf("%d", &opcao);
 
-            printf("Nome da ferramenta: ");
-            scanf(" %49[^\n]", nome_ferramenta);
+        switch (opcao) {
 
-            printf("Codigo QR: ");
-            scanf("%d", &codigo_qr);
+            case 1: {
+                system("cls");
 
-            printf("Valor da compra: R$ ");
-            scanf("%f", &valor_compra);
+                char nome_ferramenta[50];
+                int codigo_qr;
+                float valor_compra;
 
-            system("cls");
+                printf("\n--- SISTEMA FERRALOG ---\n");
 
-            if (valor_compra > 0) {
-                printf("\n--- RECIBO FERRALOG ---\n");
-                printf("Ferramenta: %s\n", nome_ferramenta);
-                printf("QR Code: %d\n", codigo_qr);
-                printf("Valor: R$ %.2f\n", valor_compra);
+                printf("Nome da ferramenta: ");
+                scanf(" %49[^\n]", nome_ferramenta);
+
+                printf("Codigo QR: ");
+                scanf("%d", &codigo_qr);
+
+                printf("Valor da compra: R$ ");
+                scanf("%f", &valor_compra);
+
+                system("cls");
+
+                if (valor_compra > 0) {
+                    printf("\n--- RECIBO FERRALOG ---\n");
+                    printf("Ferramenta: %s\n", nome_ferramenta);
+                    printf("QR Code: %d\n", codigo_qr);
+                    printf("Valor: R$ %.2f\n", valor_compra);
+                    Sleep(2000);
+                }
+                else {
+                    printf("ERRO: O valor da compra deve ser maior que zero!\n");
+                }
+
+                break;
             }
-            else {
-                printf("ERRO: O valor da compra deve ser maior que zero!\n");
-            }
 
-            break;
+            case 2:
+                system("cls");
+                printf("Area ainda em desenvolvimento...\n");
+                Sleep(2000);
+                break;
+
+            case 3:
+                system("cls");
+                printf("Area ainda em desenvolvimento...\n");
+                Sleep(2000);
+                break;
+
+            case 4:
+                system("cls");
+                printf("Ate mais!\n\n");
+                Sleep(2000);
+                printf("Desligando sistema Ferralog...\n");
+                Sleep(1500);
+                break;
+
+            default:
+                printf("Opcao invalida!\n");
+                Sleep(1500);
+                break;
         }
 
-        case 2:
-            system("cls");
-            printf("Area ainda em desenvolvimento...");
-            break;
-
-        case 3:
-            system("cls");
-            printf("Area ainda em desenvolvimento...");
-            break;
-
-        case 4:
-            system("cls");
-            printf("Ate mais!\n\n");
-            Sleep(2000);
-            printf("Desligando sistema Ferralog...\n");
-            Sleep(1500);
-            break;
-
-        default:
-            printf("Opcao invalida!\n");
-            break;
-    }
+    } while (opcao != 4);
 
     return 0;
 }
