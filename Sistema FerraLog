@@ -68,7 +68,7 @@ int main()
                 printf("Ferramenta: %s\n", nome_ferramenta);
                 printf("QR Code: %d\n", codigo_qr);
                 printf("Valor: R$ %.2f\n", valor_compra);
-            } 
+            }
             else {
                 printf("ERRO: O valor da compra deve ser maior que zero!\n");
             }
@@ -77,10 +77,12 @@ int main()
         }
 
         case 2:
+            system("cls")
             printf("Area ainda em desenvolvimento...");
             break;
 
         case 3:
+            system("cls");
             printf("Area ainda em desenvolvimento...");
             break;
 
